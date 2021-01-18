@@ -57,6 +57,7 @@ public class Student_Menu extends Library {
         BACKButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                JOptionPane.showMessageDialog(null, "NOTE: \n\tAll Data will be erased, project do not contain filing", "Warning!", JOptionPane.OK_OPTION);
                 new Admin_menu(frame);
 
             }
@@ -110,7 +111,7 @@ public class Student_Menu extends Library {
                             Object data[] = {lib.getStudents().get(i).getName(), String.valueOf(lib.getStudents().get(i).getId())};
                             model.addRow(data);
                         }
-                            new Table(table,panel);
+                            new Table(model,panel);
 
 
                     } else {

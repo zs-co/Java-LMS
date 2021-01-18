@@ -6,6 +6,10 @@ public class Student {
     private String name;
     private int id;
     Account account;
+
+    public Student() {
+    }
+
     Penalty penalty;
     Scanner input = new Scanner(System.in);
 

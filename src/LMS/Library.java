@@ -259,8 +259,6 @@ public class Library {
             } else if (choice == 3) {
                 if (books.size() == 0) {
                     System.out.println("\n\033[31mYou have no books to search yet.\033[0m\n");
-                    clrscr();
-                    books_management();
                 } else {
                     clrscr();
                     System.out.print("1.Search All Books \n2.Search any book \n>>>");
@@ -287,9 +285,9 @@ public class Library {
                             System.out.println("\n\033[31mYou have no book having ''" + bk_name + "'' in name\033[0m\n");
                         }
                     }
-                    clrscr();
-                    books_management();
                 }
+                clrscr();
+                books_management();
             }
             else if(choice == 4){
                 System.out.println("You have \033[31m" + books.size() + " book(s)\033[0m in total.");
@@ -344,4 +342,11 @@ public class Library {
     }
 
 
+    public ArrayList<Student> getStudents() {
+        return students;
+    }
+
+    public ArrayList<Book> getBooks() {
+        return books;
+    }
 }

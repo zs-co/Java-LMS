@@ -22,7 +22,7 @@ public class Login_page  {
         frame.setContentPane(Login);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setBounds(10,10,420, 360) ;
-
+        frame.setLocationRelativeTo(null);
         frame.setVisible(true);
         loginButton.addActionListener(new ActionListener() {
             @Override

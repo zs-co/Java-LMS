@@ -35,6 +35,7 @@ public class Student_Menu extends Library {
         frame.setLayout(null);
         frame.setContentPane(Std_panel);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setLocationRelativeTo(null);
         frame.setVisible(true);
         addStudentButton.addActionListener(new ActionListener() {
             @Override
@@ -47,8 +48,27 @@ public class Student_Menu extends Library {
 
                     Student student = new Student(textField2.getText().toString(), Integer.parseInt(textField1.getText().toString()));
                     //Student student1 = new Student("Hamza ", 32);
-                    lib.add_student(student);
-                    JOptionPane.showMessageDialog(null,"Student is successfully added");
+                    if(lib.getStudents().size() == 0)
+                    {
+                        lib.add_student(student);
+                        JOptionPane.showMessageDialog(null,"Student is successfully added.");
+                    }
+
+                    else {
+                        for (int i = 0; i < lib.getStudents().size(); i++) {
+                            if (Integer.parseInt(textField1.getText().toString()) == lib.getStudents().get(i).getId()) {
+                                JOptionPane.showMessageDialog(null, "Student with ID: " + lib.getStudents().get(i).getId() + " already exists.");
+                                found = true;
+                                break;
+                            } else
+                                found = false;
+                        }
+                        if(found == false){
+                            lib.add_student(student);
+                            JOptionPane.showMessageDialog(null, "Student is successfully added.");
+                        }
+                    }
+
                 }
 
             }
@@ -82,7 +102,7 @@ public class Student_Menu extends Library {
                             found = true;
                             break;
 
-                        }
+                                         }
                         else
                             found = false;
                     }

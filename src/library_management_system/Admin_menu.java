@@ -3,8 +3,6 @@ package library_management_system;
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.ContainerAdapter;
-import java.awt.event.ContainerEvent;
 
 public class Admin_menu {
 
@@ -28,6 +26,7 @@ public class Admin_menu {
         frame1.setContentPane(next_panel);
         frame1.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame1.setBounds(10, 10, 650, 500);
+        frame.setLocationRelativeTo(null);
         frame1.setVisible(true);
 
         studentsManagementMenuButton.addActionListener(new ActionListener() {
@@ -42,6 +41,12 @@ public class Admin_menu {
            int option = JOptionPane.showConfirmDialog(null, "Do you really want to exit?", "Exit", JOptionPane.YES_NO_OPTION);
             if(option == JOptionPane.YES_OPTION)
                 System.exit(0);
+            }
+        });
+        BOOKMENUButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                new book_menu(frame);
             }
         });
     }

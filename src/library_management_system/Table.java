@@ -21,6 +21,7 @@ public class Table {
         frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 
         frame.setSize(500, 150);
+        frame.setLocationRelativeTo(null);
         frame.setVisible(true);
 
     }
